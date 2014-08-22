@@ -2,17 +2,18 @@
 import os,sys,constraint
 
 # a text file that contains 9x9 digits seperated with whitespace.
-# empty squares are denoted by zero.
+# empty squares are denoted by zeroes.
 data = map(int,open(sys.argv[1]).read().split())
 #3x3 square template
 square = [0,1,2,9,10,11,18,19,20]
 
 sudoku = constraint.Problem()
-#[sudoku.addConstraint(lambda x: x==e,[i]) for i,e in enumerate(data) if e]
+
+#reset the domains of variables with given values
 sudoku.addVariables(range(81),range(1,10))
 for i,e in enumerate(data):
   if e: del sudoku._variables[i] 
-#initial values
+
 [sudoku.addVariable(i,[e]) for i,e in enumerate(data) if e]
 
 #row constraint

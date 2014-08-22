@@ -9,11 +9,9 @@ square = [0,1,2,9,10,11,18,19,20]
 
 sudoku = constraint.Problem()
 
-#reset the domains of variables with given values
-sudoku.addVariables(range(81),range(1,10))
-for i,e in enumerate(data):
-  if e: del sudoku._variables[i] 
-
+#add free variables
+sudoku.addVariables(filter(lambda x: data[x]==0, range(81)),range(1,10))
+#limit the domain for given values
 [sudoku.addVariable(i,[e]) for i,e in enumerate(data) if e]
 
 #row constraint

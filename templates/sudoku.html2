@@ -1,0 +1,270 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8"> 
+    <title>Sudoku Solver</title>
+    <link href="/sudoku/static/css/materialize.min.css" rel="stylesheet">
+    <link href="/sudoku/static/css/styles.css" rel="stylesheet">
+    <script src="/sudoku/static/js/zepto.min.js"></script>
+  </head>
+  <body>
+      <div class="container">
+      <center>
+      <h4>Sudoku Solver</h4>
+      <form method="POST" action="/sudoku">
+      <table class="main">
+        <tbody>
+          <tr>
+            <td id="c1" class="inner">
+
+              <table class="meta">
+                <tbody>
+                  <tr>
+                    <td id="c11" class="mini"> <input name="c11" class="cell" autofocus></input> </td>
+                    <td id="c12" class="mini"> <input name="c12" class="cell"></input> </td>
+                    <td id="c13" class="mini"> <input name="c13" class="cell"></input> </td>
+                  </tr>                                        
+                  <tr>                                         
+                    <td id="c14" class="mini"> <input name="c14" class="cell"></input> </td>
+                    <td id="c15" class="mini"> <input name="c15" class="cell"></input> </td>
+                    <td id="c16" class="mini"> <input name="c16" class="cell"></input> </td>
+                  </tr>                                        
+                  <tr>                                         
+                    <td id="c17" class="mini"> <input name="c17" class="cell"></input> </td>
+                    <td id="c18" class="mini"> <input name="c18" class="cell"></input> </td>
+                    <td id="c19" class="mini"> <input name="c19" class="cell"></input> </td>
+                  </tr>
+                </tbody>
+              </table>
+
+             </td>
+            <td id="c2" class="inner">
+
+              <table class="meta">
+                <tbody>
+                  <tr>
+                    <td id="c21" class="mini"> <input name="c21" class="cell"></input> </td>
+                    <td id="c22" class="mini"> <input name="c22" class="cell"></input> </td>
+                    <td id="c23" class="mini"> <input name="c23" class="cell"></input> </td>
+                  </tr>                                        
+                  <tr>                                         
+                    <td id="c24" class="mini"> <input name="c24" class="cell"></input> </td>
+                    <td id="c25" class="mini"> <input name="c25" class="cell"></input> </td>
+                    <td id="c26" class="mini"> <input name="c26" class="cell"></input> </td>
+                  </tr>                                        
+                  <tr>                                         
+                    <td id="c27" class="mini"> <input name="c27" class="cell"></input> </td>
+                    <td id="c28" class="mini"> <input name="c28" class="cell"></input> </td>
+                    <td id="c29" class="mini"> <input name="c29" class="cell"></input> </td>
+                  </tr>
+                </tbody>
+              </table>
+
+             </td>
+            <td id="c3" class="inner"> 
+
+              <table class="meta">
+                <tbody>
+                  <tr>
+                    <td id="c31" class="mini"> <input name="c31" class="cell"></input></td>
+                    <td id="c32" class="mini"> <input name="c32" class="cell"></input> </td>
+                    <td id="c33" class="mini"> <input name="c33" class="cell"></input> </td>
+                  </tr>                                        
+                  <tr>                                         
+                    <td id="c34" class="mini"> <input name="c34" class="cell"></input> </td>
+                    <td id="c35" class="mini"> <input name="c35" class="cell"></input> </td>
+                    <td id="c36" class="mini"> <input name="c36" class="cell"></input> </td>
+                  </tr>                                        
+                  <tr>                                         
+                    <td id="c37" class="mini"> <input name="c37" class="cell"></input> </td>
+                    <td id="c38" class="mini"> <input name="c38" class="cell"></input> </td>
+                    <td id="c39" class="mini"> <input name="c39" class="cell"></input> </td>
+                  </tr>
+                </tbody>
+              </table>
+
+             </td>
+          </tr>
+          <tr>
+            <td id="c4" class="inner">  
+
+              <table class="meta">
+                <tbody>
+                  <tr>
+                    <td id="c41" class="mini"> <input name="c41" class="cell"></input> </td>
+                    <td id="c42" class="mini"> <input name="c42" class="cell"></input> </td>
+                    <td id="c43" class="mini"> <input name="c43" class="cell"></input> </td>
+                  </tr>                                        
+                  <tr>                                         
+                    <td id="c44" class="mini"> <input name="c44" class="cell"></input> </td>
+                    <td id="c45" class="mini"> <input name="c45" class="cell"></input> </td>
+                    <td id="c46" class="mini"> <input name="c46" class="cell"></input> </td>
+                  </tr>                                        
+                  <tr>                                         
+                    <td id="c47" class="mini"> <input name="c47" class="cell"></input> </td>
+                    <td id="c48" class="mini"> <input name="c48" class="cell"></input> </td>
+                    <td id="c49" class="mini"> <input name="c49" class="cell"></input> </td>
+                  </tr>
+                </tbody>
+              </table>
+
+             </td>
+            <td id="c5" class="inner">  
+
+              <table class="meta">
+                <tbody>
+                  <tr>
+                    <td id="c51" class="mini"> <input name="c51" class="cell"></input> </td>
+                    <td id="c52" class="mini"> <input name="c52" class="cell"></input> </td>
+                    <td id="c53" class="mini"> <input name="c53" class="cell"></input> </td>
+                  </tr>                                        
+                  <tr>                                         
+                    <td id="c54" class="mini"> <input name="c54" class="cell"></input> </td>
+                    <td id="c55" class="mini"> <input name="c55" class="cell"></input> </td>
+                    <td id="c56" class="mini"> <input name="c56" class="cell"></input> </td>
+                  </tr>                                        
+                  <tr>                                         
+                    <td id="c57" class="mini"> <input name="c57" class="cell"></input> </td>
+                    <td id="c58" class="mini"> <input name="c58" class="cell"></input> </td>
+                    <td id="c59" class="mini"> <input name="c59" class="cell"></input> </td>
+                  </tr>
+                </tbody>
+              </table>
+
+             </td>
+            <td id="c6" class="inner">  
+
+              <table class="meta">
+                <tbody>
+                  <tr>
+                    <td id="c61" class="mini"> <input name="c61" class="cell"></input> </td>
+                    <td id="c62" class="mini"> <input name="c62" class="cell"></input> </td>
+                    <td id="c63" class="mini"> <input name="c63" class="cell"></input> </td>
+                  </tr>                                        
+                  <tr>                                         
+                    <td id="c64" class="mini"> <input name="c64" class="cell"></input> </td>
+                    <td id="c65" class="mini"> <input name="c65" class="cell"></input> </td>
+                    <td id="c66" class="mini"> <input name="c66" class="cell"></input> </td>
+                  </tr>                                        
+                  <tr>                                         
+                    <td id="c67" class="mini"> <input name="c67" class="cell"></input> </td>
+                    <td id="c68" class="mini"> <input name="c68" class="cell"></input> </td>
+                    <td id="c69" class="mini"> <input name="c69" class="cell"></input> </td>
+                  </tr>
+                </tbody>
+              </table>
+
+             </td>
+          </tr>
+          <tr>
+            <td id="c7" class="inner">  
+
+              <table class="meta">
+                <tbody>
+                  <tr>
+                    <td id="c71" class="mini"> <input name="c71" class="cell"></input> </td>
+                    <td id="c72" class="mini"> <input name="c72" class="cell"></input> </td>
+                    <td id="c73" class="mini"> <input name="c73" class="cell"></input> </td>
+                  </tr>                                        
+                  <tr>                                         
+                    <td id="c74" class="mini"> <input name="c74" class="cell"></input> </td>
+                    <td id="c75" class="mini"> <input name="c75" class="cell"></input> </td>
+                    <td id="c76" class="mini"> <input name="c76" class="cell"></input> </td>
+                  </tr>                                        
+                  <tr>                                         
+                    <td id="c77" class="mini"> <input name="c77" class="cell"></input> </td>
+                    <td id="c78" class="mini"> <input name="c78" class="cell"></input> </td>
+                    <td id="c79" class="mini"> <input name="c79" class="cell"></input> </td>
+                  </tr>
+                </tbody>
+              </table>
+
+             </td>
+            <td id="c8" class="inner">  
+
+              <table class="meta">
+                <tbody>
+                  <tr>
+                    <td id="c81" class="mini"> <input name="c81" class="cell"></input> </td>
+                    <td id="c82" class="mini"> <input name="c82" class="cell"></input> </td>
+                    <td id="c83" class="mini"> <input name="c83" class="cell"></input> </td>
+                  </tr>                                        
+                  <tr>                                         
+                    <td id="c84" class="mini"> <input name="c84" class="cell"></input> </td>
+                    <td id="c85" class="mini"> <input name="c85" class="cell"></input> </td>
+                    <td id="c86" class="mini"> <input name="c86" class="cell"></input> </td>
+                  </tr>                                        
+                  <tr>                                         
+                    <td id="c87" class="mini"> <input name="c87" class="cell"></input> </td>
+                    <td id="c88" class="mini"> <input name="c88" class="cell"></input> </td>
+                    <td id="c89" class="mini"> <input name="c89" class="cell"></input> </td>
+                  </tr>
+                </tbody>
+              </table>
+
+             </td>
+            <td id="c9" class="inner">  
+
+              <table class="meta">
+                <tbody>
+                  <tr>
+                    <td id="c91" class="mini"> <input name="c91" class="cell"></input> </td>
+                    <td id="c92" class="mini"> <input name="c92" class="cell"></input> </td>
+                    <td id="c93" class="mini"> <input name="c93" class="cell"></input> </td>
+                  </tr>                                        
+                  <tr>                                         
+                    <td id="c94" class="mini"> <input name="c94" class="cell"></input> </td>
+                    <td id="c95" class="mini"> <input name="c95" class="cell"></input> </td>
+                    <td id="c96" class="mini"> <input name="c96" class="cell"></input> </td>
+                  </tr>                                        
+                  <tr>                                         
+                    <td id="c97" class="mini"> <input name="c97" class="cell"></input> </td>
+                    <td id="c98" class="mini"> <input name="c98" class="cell"></input> </td>
+                    <td id="c99" class="mini"> <input name="c99" class="cell"></input> </td>
+                  </tr>
+                </tbody>
+              </table>
+
+             </td>
+          </tr>
+        </tbody>
+      </table>
+      <script>
+        $('.cell').val('');
+        $('.cell').on('keydown',function(e) {
+            e.preventDefault();
+            if(e.keyCode<58 && e.keyCode>48) { 
+                this.value = e.keyCode-48;
+                index = $('.cell').index($(this))
+                next = $('.cell').slice(index+1,index+2);
+                next.focus();
+            }else if(e.keyCode==32) {
+                index = $('.cell').index($(this))
+                next = $('.cell').slice(index+1,index+2);
+                next.focus();
+            }else if(e.keyCode==39) {
+                index = $('.cell').index($(this))
+                next = $('.cell').slice(index+1,index+2);
+                next.focus();
+            }else if(e.keyCode==37) {
+                index = $('.cell').index($(this))
+                prev = $('.cell').slice(index-1,index);
+                prev.focus();
+            }
+        });
+      </script>
+      <!--<input id="refresh" class="btn waves-effect waves-light vbtn" type="button" value="Refresh"/>
+      <script>
+          $('#refresh').on('click',function(e) {
+            e.preventDefault();
+            $('.cell').val('');
+            first = $('.cell').slice(0,1);
+            first.focus();
+          });
+      </script>-->
+      <input class="btn waves-effect waves-light vbtn" type="submit" value="Solve"/>
+      </form>
+      </center>
+      </div>
+  </body>
+</html>

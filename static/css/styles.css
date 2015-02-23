@@ -1,0 +1,61 @@
+html,body {
+   color: #aaa;
+   margin-left: 10px;
+   margin-top: 10px;
+   -moz-user-select: none;
+}
+
+::selection { background: transparent; }
+::-moz-selection { background: transparent; }
+
+.mini {
+  border: 2px solid #ccc;
+  padding: 0;
+  width: 43px;
+  height: 40px;
+}
+
+.inner {
+  padding: 0;
+}
+
+.vbtn {
+    width: 120px;
+}
+
+.rbtn {
+    background-color: #e51c23;
+}
+
+.cell {
+  color: transparent;
+  text-shadow: 0 0 0 #aaa;
+  font-size: 1.2em;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+}
+
+.given {
+  text-shadow: 0 0 0 #bbb;
+}
+
+.solved {
+  text-shadow: 0 0 0 #ff9800;
+}
+
+.cell:focus {
+  text-shadow: 0 0 0 #fff;
+  background-color: #5677fc;
+}
+
+:hover, :active, :focus {
+  outline: 0;
+  outline-color: transparent;
+  outline-style: none;
+}
+
+input::-moz-focus-inner { 
+      border: 0; 
+}

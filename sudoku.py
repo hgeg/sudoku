@@ -1,10 +1,9 @@
 #!/usr/bin/env python
 import os,sys,constraint
 
-def main():
+def solve(data):
   # a text file that contains 9x9 digits seperated with whitespace.
   # empty squares are denoted by zeroes.
-  data = map(int,open(sys.argv[1]).read().split())
   #3x3 square template
   square = [0,1,2,9,10,11,18,19,20]
 
@@ -24,21 +23,22 @@ def main():
 
   #pure witchcraft
   solution = sudoku.getSolution()
+  return solution
 
-  #check if solution exists
-  if not solution: 
-    print "No solution found!"
-    return 0
 
-  #output formatting
-  out = ""
-  vals = solution.values()
-  for e in xrange(81):
-    if (e+1)%9:
-      out += "%d "%vals[e]
-    else: out += "%d\n"%vals[e]
+if __name__ == '__main__': 
+    data = map(int,open(sys.argv[1]).read().split())
+    solution = solve(data)
+    #check if solution exists
+    if not solution: 
+      print "No solution found!"
+    else:
+      #output formatting
+      out = ""
+      vals = solution.values()
+      for e in xrange(81):
+        if (e+1)%9:
+          out += "%d "%vals[e]
+        else: out += "%d\n"%vals[e]
 
-  print out
-  return 0
-
-if __name__ == '__main__': main()
+      print out
